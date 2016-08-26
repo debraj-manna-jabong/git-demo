@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sonatype.blog</groupId>
 	<artifactId>git-demo</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>git-demo</name>
@@ -34,12 +33,7 @@
 			<name>Snapshots</name>
 			<url>http://localhost:8081/repository/maven-snapshots/</url>
 		</snapshotRepository>
-	</distributionManagement>
-	<scm>
-		<connection>scm:git:git@github.com:debraj-manna-jabong/git-demo.git</connection>
-		<url>scm:git:git@github.com:debraj-manna-jabong/git-demo.git</url>
-		<developerConnection>scm:git:git@github.com:debraj-manna-jabong/git-demo.git</developerConnection>
-	</scm>
+	</distributionManagement>	
 	<build>
 		<plugins>
 			<plugin>
@@ -50,7 +44,7 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
-			</plugin>
+			</plugin>			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
@@ -87,10 +81,9 @@
 					</execution>
 				</executions>
 				<configuration>
-					<serverId>nexusReleases</serverId>
-					<nexusUrl>http://localhost:8081/</nexusUrl>				
+					<serverId>nexusSnapshots</serverId>
+					<nexusUrl>http://localhost:8081/</nexusUrl>
 					<skipStaging>true</skipStaging>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
 		</plugins>
